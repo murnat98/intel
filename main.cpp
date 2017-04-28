@@ -15,28 +15,11 @@ int main(int argc, char ** argv)
 
     std::string fileName = argv[1];
 
-    Program program;
-    program.loadProgram(argv[1]);
+    Program program(fileName);
 
-    program.initData();
-
-    if (!program.check())
-    {
-        for (auto error : program.getErrors())
-        {
-            std::cout << error.first << std::endl;
-
-            //return -1;
-        }
-    }
-
-    program.loadToMemory();
-
-    program.execute();
+    program.run();
 
     program.printRegisters();
-
-    PROGRAM_DUMP(program);
 
     return 0;
 }

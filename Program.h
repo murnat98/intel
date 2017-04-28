@@ -62,6 +62,8 @@ public:
     void loadToMemory();
     void execute();
 
+    void run();
+
     std::map<std::string, int> getErrors() const;
 
     #ifdef DEBUG

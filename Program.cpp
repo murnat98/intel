@@ -217,6 +217,25 @@ void Program::execute()
     }
 }
 
+void Program::run()
+{
+    initData();
+
+    if (!check())
+    {
+        for (auto error : getErrors())
+        {
+            std::cout << error.first << std::endl;
+
+            //return -1;
+        }
+    }
+
+    loadToMemory();
+
+    execute();
+}
+
 std::map<std::string, int> Program::getErrors() const
 {
     return error_;
