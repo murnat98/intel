@@ -211,8 +211,8 @@ void Program::execute()
                     break;
                 }
             }
-
-            break;
+            else
+                break;
         }
     }
 }
