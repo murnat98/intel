@@ -289,11 +289,6 @@ DEFCMD(cmdSt)
     uint8_t  rs2 = getRs2(command);
     uint16_t imm = getImm(command);
 
-    if (!rd)
-    {
-        return 0;
-    }
-
     uint16_t memory = registers_[rs1] + registers_[rs2] + imm;
 
     if (checkWriteRanges(memory))
